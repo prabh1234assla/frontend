@@ -10,7 +10,7 @@ import ForgotPassword from './jsx/ForgotPassword.jsx'
 import ResetPassword from './jsx/ResetPassword.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-<React.StrictMode>
+<React.StrictMode>                                                                                                          
   <BrowserRouter>
       <Routes>
         <Route index element={<App />} />

@@ -24,6 +24,7 @@ export default function Login(){
     }
 
     return (<>
+    <div id='form_wrapper'>
         <h1>Login</h1>
 
         <h2>to access your account</h2>
@@ -44,5 +45,7 @@ export default function Login(){
         <NavLink to='/sigin'>
             <h3>signin now to get your account...</h3>
         </NavLink>
+
+        </div>
     </>)
 }

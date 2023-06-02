@@ -27,6 +27,7 @@ export default function Signin(){
     }
 
     return (<>
+    <div id='form_wrapper'>
         <h1>Signin</h1>
 
         <h2>to create your account</h2>
@@ -55,5 +56,6 @@ export default function Signin(){
         <NavLink to='/forgot'>
             <h3>reset your login password...</h3>
         </NavLink>
+    </div>
     </>)
 }

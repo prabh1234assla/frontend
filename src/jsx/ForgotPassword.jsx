@@ -22,6 +22,7 @@ export default function ForgotPassword(){
     }
 
     return (<>
+    <div id='form_wrapper'>
         <h1>Enter your email address</h1>
 
         <h2>to reset your password</h2>
@@ -40,5 +41,6 @@ export default function ForgotPassword(){
         <NavLink to='/login'>
             <h3>login to your account...</h3>
         </NavLink>
+    </div>
     </>)
 }

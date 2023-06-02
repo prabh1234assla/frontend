@@ -1,0 +1,103 @@
+*{
+    user-select: none;
+}
+
+#tick{
+    color: rgb(44, 183, 44);
+    font-size: small;
+    float: right;
+}
+
+#cross{
+    color: rgb(250, 50, 50);
+    font-size: larger;
+    font-weight: bolder;
+    float: right;
+}
+
+label{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: small;
+    color: rgb(129, 129, 129);
+}
+
+input{
+    font-family: 'Nunito', sans-serif;
+    font-size: small;
+    color: rgb(150, 150, 150);
+    border: transparent;
+    outline: transparent;
+    border-bottom: 2px solid orchid;
+    background-color: rgba(218, 112, 214, 0.192);
+}
+
+#bad_message{
+    font-family: 'Nunito', sans-serif;
+    color: rgb(250, 50, 50);
+    font-size: xx-small;
+    font-weight: 900;
+    width: 300px;
+}
+
+#good_message{
+    font-family: 'Nunito', sans-serif;  
+    color: rgb(19, 161, 19);
+    font-size: xx-small;
+    font-weight: 900;
+    width: 300px;
+}
+
+#wrapper_input_box{
+    width: 280px;
+    padding: 4px;
+    margin: 4px;
+    height: 90px;
+    border-radius: 13px;
+    border: 1px solid orchid;
+}
+
+#loading{
+    position: absolute;
+    color: rgb(103, 103, 250);
+    font-weight: 900;
+}
+
+h1{
+    font-family: 'Nunito', sans-serif;  
+    color: rgb(242, 140, 238);
+    font-variant: small-caps;
+}
+
+h2{
+    font-family: 'Quicksand', sans-serif;  
+    color: rgb(144, 2, 140);
+    font-weight: 100;
+    font-size: large;
+}
+
+a h3{
+    text-decoration-color: rgb(132, 37, 128);
+    color: rgb(132, 37, 128);
+}
+
+h3{
+    font-family: 'Quicksand', sans-serif;  
+    font-weight: 100;
+    font-size: x-small;
+    color: rgb(102, 102, 102);
+}
+
+button{
+    color: rgb(150, 42, 146);
+}
+
+#form_wrapper{
+    background-color: rgba(227, 227, 227, 0.494);
+    width: min-content;
+    padding: 1px 3px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid orchid;
+    border-radius: 8px;
+}

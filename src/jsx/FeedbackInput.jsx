@@ -1,5 +1,6 @@
 import React from "react"
 import { useState, useEffect } from "react"
+import '../css/FeedbackInput.css'
 
 export default function FeedbackInput({data, value, setValue, _type, info, validator}){
     const [typing, setTyping] = useState(false)
@@ -24,6 +25,8 @@ export default function FeedbackInput({data, value, setValue, _type, info, valid
     }
 
     return (<>
+    <div id="wrapper_input_box" style={{backgroundColor : proper ? 'rgba(19, 161, 19, 0.08)' : 'rgba(250, 50, 50, 0.08)'}}>
+
         {proper ? <div id='tick'>✓</div> : <div id='cross'>×</div>}
 
         <label htmlFor={data}> {`${data.charAt(0).toUpperCase()+data.slice(1)} :`} </label>
@@ -33,5 +36,7 @@ export default function FeedbackInput({data, value, setValue, _type, info, valid
         {!proper ? <div id='bad_message'>{info}</div> : <div id='good_message'>{info}</div>}
 
         {typing ? <div id='loading'>↻</div> : ""}
+
+    </div>
     </>)
 }

@@ -21,6 +21,7 @@ export default function ResetPassword(){
     }
 
     return (<>
+    <div id='form_wrapper'>
         <h1>Enter new password</h1>
 
         <h2>to reset</h2>
@@ -39,5 +40,6 @@ export default function ResetPassword(){
         <NavLink to='/login'>
             <h3>login to your account...</h3>
         </NavLink>
+    </div>
     </>)
 }
