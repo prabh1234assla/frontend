@@ -1,14 +1,8 @@
 import './App.css'
-import Login from './js/Login'
-import Signin from './js/Signin'
+import Login from './jsx/Login.jsx'
 
-function App() {
-
-  return (
-    <>
-      go on /sigin or /login for those forms!
-    </>
-  )
+export default function App() {
+  return (<>
+      <Login />
+  </>)
 }
-
-export default App

@@ -3,7 +3,7 @@ function idValidator(event, setFeedbackInfo){
         setFeedbackInfo("username cannot be empty")
     
     else if(!(/^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9_]+$/.test(event.target.value)))
-        setFeedbackInfo("username must contain atleast one letter, one digit, at least a length of one character and at least one underscore or alphanumeric character")
+        setFeedbackInfo("username must contain atleast one letter, one digit and can contain alphanumeric characters and underscores")
 
     else if(event.target.value.length <= 6)
         setFeedbackInfo("username cannot be smaller than 6 letters")
@@ -19,8 +19,8 @@ function passwordValidator(event, setFeedbackInfo){
     if(!event.target.value.length)
         setFeedbackInfo("password cannot be empty")
     
-    else if(!(/^(?=.*\d)(?=.*[_!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])$/.test(event.target.value)))
-        setFeedbackInfo("password must contain atleast one digit, one special character from _!@#$%^&*, one uppercase and one lowercase letter")
+    else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[0-9])[a-zA-Z0-9_!@#$%^&*]+$/.test(event.target.value)))
+        setFeedbackInfo("password must contain atleast one digit, one special character from !@#$%^&*, one uppercase and one lowercase letter and can contain underscores, listed special characters and alphanumeric characters")
 
     else if(event.target.value.length <= 6)
         setFeedbackInfo("password cannot be smaller than 6 letters")

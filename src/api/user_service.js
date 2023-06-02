@@ -1,22 +1,20 @@
 import axios from "axios"
 import AuthHeader from "./auth-header"
 
-const API_URL = "http://localhost:8080/api/test/";
-
 const getPublicContent = () => {
-  return axios.get(API_URL + "all");
+  return axios.get(import.meta.env.API_URL_TEST + "all");
 }
 
 const getUserBoard = () => {
-  return axios.get(API_URL + "user", { headers: AuthHeader() })
+  return axios.get(import.meta.env.API_URL_TEST + "user", { headers: AuthHeader() })
 }
 
 const getModeratorBoard = () => {
-  return axios.get(API_URL + "mod", { headers: AuthHeader() })
+  return axios.get(import.meta.env.API_URL_TEST + "mod", { headers: AuthHeader() })
 }
 
 const getAdminBoard = () => {
-  return axios.get(API_URL + "admin", { headers: AuthHeader() })
+  return axios.get(pimport.meta.env.API_URL_TEST + "admin", { headers: AuthHeader() })
 }
 
 const UserService = {

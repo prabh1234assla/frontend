@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import AuthService from '../api/auth_service'
 import FeedbackInput from './FeedbackInput'
-import Validators from './Validators'
-import { NavLink } from 'react-router-dom'
+import Validators from '../js/Validators'
 
 export default function Signin(){
     const [id, setId] = useState("")
@@ -17,11 +17,13 @@ export default function Signin(){
 
     const [submitting, setSubmitting] = useState(false)
 
-    async function submittingLoginDetails(){
+    async function submittingSigninDetails(event){
+        event.preventDefault()
         setSubmitting(true)
         const data = await AuthService.signin(id, email, password)
-        setSubmitting(false)
+        console.log(data)
         alert(data)
+        setSubmitting(false)
     }
 
     return (<>
@@ -31,7 +33,7 @@ export default function Signin(){
 
         {submitting ? <h3>submitting...</h3> : ""}
 
-        <form className='login_form' method='post'>
+        <form className='login_form' method='post' onSubmit={(event) => {submittingSigninDetails(event)}}>
 
             <FeedbackInput value={id} data='id' setValue={(event)=>{setId(event.target.value)}} validator={(event)=>{Validators.idValidator(event, setFeedbackInfoForId)}} info={feedbackInfoForId} />
 
@@ -39,13 +41,19 @@ export default function Signin(){
 
             <FeedbackInput value={email} data='email' setValue={(event)=>{setEmail(event.target.value)}} validator={(event)=>{Validators.emailValidator(event, setFeedbackInfoForEmail)}} info={feedbackInfoForEmail} type="email"/>
 
-            <button type='submit' onSubmit={submittingLoginDetails}>Signin</button>
+            <button type='submit'>Signin</button>
         </form>
 
         <h3>have an account already?</h3>
 
         <NavLink to='/login'>
             <h3>login to your account...</h3>
+        </NavLink>
+
+        <h3>forgot your password?</h3>
+
+        <NavLink to='/forgot'>
+            <h3>reset your login password...</h3>
         </NavLink>
     </>)
 }
