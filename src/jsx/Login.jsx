@@ -24,28 +24,29 @@ export default function Login(){
     }
 
     return (<>
-    <div id='form_wrapper'>
-        <h1>Login</h1>
+        <div id='form_container'>
+            <div id='form_and_contents'>
+                <h1>Login</h1>
 
-        <h2>to access your account</h2>
+                <h2>to access your account</h2>
 
-        {submitting ? <h3>submitting...</h3> : ""}
+                {submitting ? <h3 id='submitting_message'>submitting...</h3> : ""}
 
-        <form className='login_form' method='post' onSubmit={(event) => {submittingLoginDetails(event)}}>
+                <form id='form_to_be_submitted' method='post' onSubmit={(event) => {submittingLoginDetails(event)}}>
 
-            <FeedbackInput value={id} data='id' setValue={(event)=>{setId(event.target.value)}} validator={(event)=>{Validators.idValidator(event, setFeedbackInfoForId)}} info={feedbackInfoForId} />
+                    <FeedbackInput value={id} data='id' setValue={(event)=>{setId(event.target.value)}} validator={(event)=>{Validators.idValidator(event, setFeedbackInfoForId)}} info={feedbackInfoForId} />
 
-            <FeedbackInput value={password} data='password' setValue={(event)=>{setPassword(event.target.value)}} validator={(event)=>{Validators.passwordValidator(event, setFeedbackInfoForPassword)}} info={feedbackInfoForPassword} />
+                    <FeedbackInput value={password} data='password' setValue={(event)=>{setPassword(event.target.value)}} validator={(event)=>{Validators.passwordValidator(event, setFeedbackInfoForPassword)}} info={feedbackInfoForPassword} />
 
-            <button type='submit'>Login</button>
-        </form>
+                    <button type='submit'>Login</button>
+                </form>
 
-        <h3>don't have an account?</h3>
+                <h3>don't have any account?</h3>
 
-        <NavLink to='/sigin'>
-            <h3>signin now to get your account...</h3>
-        </NavLink>
-
+                <NavLink to='/sigin'>
+                    <h3>signup now to get your account...</h3>
+                </NavLink>
+            </div>
         </div>
     </>)
 }

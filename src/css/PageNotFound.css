@@ -1,7 +1,54 @@
-#fourOfourError{
-    font-family: 'Quicksand', sans-serif;  
-    font-weight: 100;
-    font-size: x-small;
-    text-decoration-color: rgb(132, 37, 128);
-    color: rgb(132, 37, 128);   
+#pageNotFound{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    background-image: url('../assets/robot.svg'), linear-gradient(62deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    animation: gradient_animation 15s ease infinite; 
+    background-size: 71%, 400% 400%;
+    background-repeat: no-repeat, repeat;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 22px 70px 4px;
+
+    width: 1500px;
+    height: 850px;
+}
+
+@keyframes gradient_animation{
+    0% {
+        background-position: 50% 0%, 0 50%;
+    }
+    50% {
+        background-position:  50% 0%, 100% 50%;
+    }
+    100% {
+        background-position:  50% 0%, 0% 50%;
+    }
+}
+
+#oops{
+    font-size: 3em;
+    font-weight: 900;
+}
+
+#error_msg_404{
+    font-family: 'Oswald', sans-serif;
+    color: rgb(89, 42, 119);
+    font-size: 5em;
+    font-family: 'Titan One', cursive;
+    text-decoration: 4px dotted overline rgb(120, 14, 117);
+}
+
+#error_msg_description{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #2e0b60cd;
+    text-align: center;
+}
+
+#four_o_four_error{
+    font-family: 'Oswald', sans-serif;
+    color: rgb(26, 111, 91);
+    font-size: 2em;
 }

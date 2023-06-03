@@ -27,35 +27,37 @@ export default function Signin(){
     }
 
     return (<>
-    <div id='form_wrapper'>
-        <h1>Signin</h1>
+    <div id='form_container'>
+        <div id='form_and_contents'>
+            <h1>Signup</h1>
 
-        <h2>to create your account</h2>
+            <h2>to create your account</h2>
 
-        {submitting ? <h3>submitting...</h3> : ""}
+            {submitting ? <h3 id='submitting_message'>submitting...</h3> : ""}
 
-        <form className='login_form' method='post' onSubmit={(event) => {submittingSigninDetails(event)}}>
+            <form id='form_to_be_submitted' method='post' onSubmit={(event) => {submittingSigninDetails(event)}}>
 
-            <FeedbackInput value={id} data='id' setValue={(event)=>{setId(event.target.value)}} validator={(event)=>{Validators.idValidator(event, setFeedbackInfoForId)}} info={feedbackInfoForId} />
+                <FeedbackInput value={id} data='id' setValue={(event)=>{setId(event.target.value)}} validator={(event)=>{Validators.idValidator(event, setFeedbackInfoForId)}} info={feedbackInfoForId} />
 
-            <FeedbackInput value={password} data='password' setValue={(event)=>{setPassword(event.target.value)}} validator={(event)=>{Validators.passwordValidator(event, setFeedbackInfoForPassword)}} info={feedbackInfoForPassword} />
+                <FeedbackInput value={password} data='password' setValue={(event)=>{setPassword(event.target.value)}} validator={(event)=>{Validators.passwordValidator(event, setFeedbackInfoForPassword)}} info={feedbackInfoForPassword} />
 
-            <FeedbackInput value={email} data='email' setValue={(event)=>{setEmail(event.target.value)}} validator={(event)=>{Validators.emailValidator(event, setFeedbackInfoForEmail)}} info={feedbackInfoForEmail} type="email"/>
+                <FeedbackInput value={email} data='email' setValue={(event)=>{setEmail(event.target.value)}} validator={(event)=>{Validators.emailValidator(event, setFeedbackInfoForEmail)}} info={feedbackInfoForEmail} type="email"/>
 
-            <button type='submit'>Signin</button>
-        </form>
+                <button type='submit'>Signin</button>
+            </form>
 
-        <h3>have an account already?</h3>
+            <h3>have an account already?</h3>
 
-        <NavLink to='/login'>
-            <h3>login to your account...</h3>
-        </NavLink>
+            <NavLink to='/login'>
+                <h3>login to your account...</h3>
+            </NavLink>
 
-        <h3>forgot your password?</h3>
+            <h3>forgot your password?</h3>
 
-        <NavLink to='/forgot'>
-            <h3>reset your login password...</h3>
-        </NavLink>
+            <NavLink to='/forgot'>
+                <h3>reset your login password...</h3>
+            </NavLink>
+        </div>
     </div>
     </>)
 }

@@ -21,25 +21,28 @@ export default function ResetPassword(){
     }
 
     return (<>
-    <div id='form_wrapper'>
-        <h1>Enter new password</h1>
+        <div id='form_container'>
+            <div id='form_and_contents'>
+                <h1>Reset password</h1>
 
-        <h2>to reset</h2>
+                <h2>enter a new password</h2>
+                <h2>in order to reset it</h2>
 
-        {submitting ? <h3>submitting...</h3> : ""}
+                {submitting ? <h3 id='submitting_message'>submitting...</h3> : ""}
 
-        <form className='login_form' method='post' onSubmit={(event) => {submittingResetDetails(event)}}>
+                <form id='form_to_be_submitted' method='post' onSubmit={(event) => {submittingResetDetails(event)}}>
 
-            <FeedbackInput value={password} data='password' setValue={(event)=>{setPassword(event.target.value)}} validator={(event)=>{Validators.passwordValidator(event, setFeedbackInfoForPassword)}} info={feedbackInfoForPassword} />
+                    <FeedbackInput value={password} data='password' setValue={(event)=>{setPassword(event.target.value)}} validator={(event)=>{Validators.passwordValidator(event, setFeedbackInfoForPassword)}} info={feedbackInfoForPassword} />
 
-            <button type='submit'>Submit</button>
-        </form>
+                    <button type='submit'>Submit</button>
+                </form>
 
-        <h3>want to go back to login page?</h3>
+                <h3>want to go back to login page?</h3>
 
-        <NavLink to='/login'>
-            <h3>login to your account...</h3>
-        </NavLink>
-    </div>
+                <NavLink to='/login'>
+                    <h3>login to your account...</h3>
+                </NavLink>
+            </div>
+        </div>
     </>)
 }

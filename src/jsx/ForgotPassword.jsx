@@ -22,25 +22,28 @@ export default function ForgotPassword(){
     }
 
     return (<>
-    <div id='form_wrapper'>
-        <h1>Enter your email address</h1>
+        <div id='form_container'>
+            <div id='form_and_contents'>
+            <h1>Forgot Password</h1>
 
-        <h2>to reset your password</h2>
+            <h2>Kindly enter your email address</h2>
+            <h2>in order to reset your password</h2>
 
-        {submitting ? <h3>submitting...</h3> : ""}
+            {submitting ? <h3 id='submitting_message'>submitting...</h3> : ""}
 
-        <form className='login_form' method='post' onSubmit={(event) => {submittingForgotDetails(event)}}>
+            <form id='form_to_be_submitted' method='post' onSubmit={(event) => {submittingForgotDetails(event)}}>
 
-            <FeedbackInput value={email} data='email' setValue={(event)=>{setEmail(event.target.value)}} validator={(event)=>{Validators.emailValidator(event, setFeedbackInfoForEmail)}} info={feedbackInfoForEmail} type="email"/>
+                <FeedbackInput value={email} data='email' setValue={(event)=>{setEmail(event.target.value)}} validator={(event)=>{Validators.emailValidator(event, setFeedbackInfoForEmail)}} info={feedbackInfoForEmail} type="email"/>
 
-            <button type='submit'>reset</button>
-        </form>
+                <button type='submit'>reset</button>
+            </form>
 
-        <h3>Want to go back to login page?</h3>
+            <h3>want to go back to login page?</h3>
 
-        <NavLink to='/login'>
-            <h3>login to your account...</h3>
-        </NavLink>
-    </div>
+            <NavLink to='/login'>
+                <h3>login to your account...</h3>
+            </NavLink>
+            </div>
+        </div>
     </>)
 }
